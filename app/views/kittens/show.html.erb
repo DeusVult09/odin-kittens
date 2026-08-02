@@ -1,0 +1,20 @@
+<div class="kitten-card">
+    <h2><%= @kitten.name %></h2>
+
+    <h3>Age:</h3>
+    <p><%= @kitten.age %></p>
+
+    <h3>Cuteness:</h3>
+    <p><%= @kitten.cuteness %></p>
+
+    <h3>Softeness:</h3>
+    <p><%= @kitten.softeness %></p>
+
+    <%= link_to "Back to Kittens, kittens_path " %><br>
+    <%= link_to "Delete Your Kitten",
+      @kitten, 
+      method: :delete, 
+      form: { data: { turbo_confirm: "Are you sure?" } } %>
+    <% end %><br><br>
+
+</div>
