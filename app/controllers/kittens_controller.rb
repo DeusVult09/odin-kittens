@@ -9,7 +9,7 @@ class KittensController < ApplicationController
   end
 
   def show
-    @kitten = Kitten.find(params[id])
+    @kitten = Kitten.find(params[:id])
   end
 
   def create
@@ -23,13 +23,15 @@ class KittensController < ApplicationController
   end
 
   def edit  
+    @kitten = Kitten.find(params[:id])
   end
 
   def update
+    @kitten = Kitten.find(params[:id])
     if @kitten.update(kitten_params)
-      redirect_to @kittens
+      redirect_to @kitten
     else
-      redirect_to :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
   
