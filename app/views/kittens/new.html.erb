@@ -1,0 +1,12 @@
+<h1>Add Your Lovely Kitten</h1>
+
+<% if @event.errors.any? %>
+  <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render "form", kitten: @kitten %>
+<%= link_to "Back to Kittens", kittens_path %>
