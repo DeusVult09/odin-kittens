@@ -1,14 +1,14 @@
 <div class="kitten-card">
-    <h2><%= @kitten.name %></h2>
+    <h3><%= @kitten.name %></h3>
 
-    <h3>Age:</h3>
+    <h4>Age:</h4>
     <p><%= @kitten.age %></p>
 
-    <h3>Cuteness:</h3>
+    <h4>Cuteness:</h4>
     <p><%= @kitten.cuteness %></p>
 
-    <h3>Softeness:</h3>
-    <p><%= @kitten.softeness %></p>
+    <h4>Softeness:</h4>
+    <p><%= @kitten.softness %></p><br>
 
     <%= link_to "View Kittens", kittens_path %><br>
     <%= link_to "Edit Your Kitten", edit_kitten_path(@kitten) %><br>
