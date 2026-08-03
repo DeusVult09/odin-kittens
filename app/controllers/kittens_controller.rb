@@ -36,9 +36,10 @@ class KittensController < ApplicationController
   end
   
   def destroy
+    @kitten = Kitten.find(params[:id])
     @kitten.destroy
     
-    redirect_to @kitten, notice: "Kitten was Unfortunately deleted"
+    redirect_to kittens_path, notice: "Kitten was unfortunately deleted"
   end
 
   private
