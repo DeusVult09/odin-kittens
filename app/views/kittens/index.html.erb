@@ -1,15 +1,20 @@
 <div class="kitten-box">
     <h2>Welcome To Our Kittens Page</h2>
 
-    <%= @kittens.each do |kitten| %>
-    <div>
-        <h3><%= kitten.name %></h3>
-    </div><br>
+    <%= link_to "Create Your Lovely Kitten", new_kitten_path %>
 
-    <%= link_to "See Your Favourite Kitten", kitten_path(kitten) %><br>
-    <%= button_to "Delete the Kitten", 
-      @kitten, 
-      method: :delete, 
-      form: { data: { turbo_confirm: "Are you sure?" } } %>
-    <% end %><br><br>>
+    <% @kittens.each do |kitten| %>
+      <div>
+        <h3><%= kitten.name %></h3>
+      </div><br>
+
+      <%= link_to "View Your Kitten", kitten %><br>
+
+      <%= button_to "Delete the Kitten", 
+        kitten, 
+        method: :delete, 
+        form: { data: { turbo_confirm: "Are you sure?" } }
+      %>
+    <% end %>
+
 </div>

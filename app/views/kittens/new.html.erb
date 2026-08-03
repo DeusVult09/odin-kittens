@@ -1,12 +1,17 @@
 <h1>Add Your Lovely Kitten</h1>
+<%= link_to "View Kittens", kittens_path %><br><br>
 
-<% if @event.errors.any? %>
+
+<% if @kitten.errors.any? %>
+  <h2>
+    <%= pluralize(@kitten.errors.count, "error") %> prohibited this kitten from being saved:
+  </h2>
+
   <ul>
-    <% @event.errors.full_messages.each do |msg| %>
+    <% @kitten.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
 
 <%= render "form", kitten: @kitten %>
-<%= link_to "Back to Kittens", kittens_path %>

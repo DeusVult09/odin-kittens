@@ -2,5 +2,10 @@
 
 <%= render "form", kitten: @kitten %>
 
-<%= link_to "Back to Kittens", kittens_path %>
-<%= link_to "View Kitten", kitten_path(@kitten) %>
+<%= link_to "Back to Kittens", kittens_path %><br>
+<%= link_to "View Kitten", kitten_path(@kitten) %><br>
+<%= link_to "Delete Your Kitten",
+      @kitten, 
+      method: :delete, 
+      form: { data: { turbo_confirm: "Are you sure?" } } 
+%>

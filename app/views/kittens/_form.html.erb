@@ -1,4 +1,4 @@
-<%= form_with model: kitten |form | %>
+<%= form_with model: kitten do |form| %>
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -17,5 +17,7 @@
   <div>
     <%= form.label :softeness %>
     <%= form.text_field :softeness %>
-  </div>
+  </div><br>
+
+  <%= form.submit %>
 <% end %>

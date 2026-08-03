@@ -8,6 +8,10 @@ class KittensController < ApplicationController
     @kittens = Kitten.all
   end
 
+  def show
+    @kitten = Kitten.find(params[id])
+  end
+
   def create
     @kitten = Kitten.new(kitten_params)
     if @kitten.save

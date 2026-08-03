@@ -10,11 +10,11 @@
     <h3>Softeness:</h3>
     <p><%= @kitten.softeness %></p>
 
-    <%= link_to "Back to Kittens, kittens_path " %><br>
+    <%= link_to "View Kittens", kittens_path %><br>
+    <%= link_to "Edit Your Kitten", edit_kitten_path(@kitten) %><br>
     <%= link_to "Delete Your Kitten",
       @kitten, 
       method: :delete, 
-      form: { data: { turbo_confirm: "Are you sure?" } } %>
-    <% end %><br><br>
-
+      form: { data: { turbo_confirm: "Are you sure?" } } 
+    %>
 </div>
